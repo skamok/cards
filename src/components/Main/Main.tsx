@@ -1,6 +1,6 @@
 import styles from './Main.module.scss';
 // import CardsContainer from '../Cards';
-// import LoginForm from '../LoginForm';
+import LoginForm from '../LoginForm';
 // import Profile from '../Profile';
 import {Switch, Route, Redirect} from "react-router-dom";
 import {useSelector} from 'react-redux';
@@ -11,7 +11,7 @@ function Main() {
     <main className={styles.main}>
       <Switch>
         <Route exact path='/loginForm'>
-          {/* <LoginForm /> */}
+          <LoginForm />
         </Route>
         
           <Route exact path='/cards'>
