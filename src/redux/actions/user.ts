@@ -28,11 +28,11 @@ export const loadUser = createAsyncThunk(
   async (auth: IAuth) => {
     const result = await apiLogin(auth.login, auth.password);
     if (result) {
-      const userInfo = {...result, logged: true, error: false};
-      return userInfo as IUserInfo;
+      const userInfo: IUserInfo = {...result, logged: true, error: false};
+      return userInfo;
     } else {
-      const userInfo = {...defaultUser, error: true, logged: false};
-      return userInfo as IUserInfo;
+      const userInfo: IUserInfo = {...defaultUser, error: true, logged: false};
+      return userInfo;
     }    
   }
 );

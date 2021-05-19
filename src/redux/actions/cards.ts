@@ -17,7 +17,7 @@ export const deleteCard = createAction(DELETE_CARD, (id: string) => {
 export const loadCards = createAsyncThunk(
   LOAD_CARDS, 
   async () => {
-    const result = await apiCards();
-    return result as Array<ICard>;
+    const result: Array<ICard> = await apiCards();
+    return result;
   }
 );
