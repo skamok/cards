@@ -3,8 +3,7 @@ import styles from "./LoginForm.module.scss";
 import { useState, useCallback, useEffect } from "react";
 import classNames from 'classnames';
 import {useAppDispatch, useAppSelector} from '../../redux/hooks/hooks';
-import {loadUser, loadUserA} from '../../redux/actions/user';
-import { useDispatch } from "react-redux";
+import {loadUser} from '../../redux/actions/user';
 
 interface IErrors {
   login: boolean;
@@ -18,8 +17,6 @@ interface IInputs {
 }
 
 function LoginForm() {
-
-  const disp = useDispatch();
 
   const dispatch = useAppDispatch();
   const user = useAppSelector((state) => state.user);
@@ -44,8 +41,7 @@ function LoginForm() {
   const btnLoginClick = useCallback((event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (inputs.login && inputs.password) {
-      dispatch(loadUserA(inputs.login, inputs.password));
-      // disp(loadUser({inputs.login, inputs.password}));
+      dispatch(loadUser({login: inputs.login, password: inputs.password}));
     } else {
       setErrors((prev) => {
         return {...prev, login: inputs.login ? false : true, password: inputs.password ? false : true}

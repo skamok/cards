@@ -2,7 +2,7 @@ import { mockedResponse, mockedAccount } from './mockedResponse.js';
 
 export const apiCards = () => {
   return new Promise((resolve) => {
-    setTimeout(() => resolve(mockedResponse), 500);
+    setTimeout(() => resolve(mockedResponse), 1000);
   })
 }
 
@@ -15,6 +15,6 @@ export const apiLogin = (login, password) => {
       } else {
         resolve(false)
       }
-    }, 2500, mockedAccount, login, password);
+    }, 1000, mockedAccount, login, password);
   })
 }

@@ -21,3 +21,11 @@ export  interface IUser {
   psw: string;
   info: IUserInfo;
 }
+
+export interface ICard {
+  id: string;
+  title: string;
+  description: string;
+  price: number;
+  imageUrl: string; 
+}
