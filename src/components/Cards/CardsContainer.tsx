@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styles from './CardsContainer.module.scss';
 import Card from './Card';
-import CardsCreationForm from './CardsCreationForm';
+import CardsCreationForm from './CardCreationForm';
 import { useAppDispatch, useAppSelector } from '../../redux/hooks/hooks'
 import {loadCards} from '../../redux/actions/cards';
 

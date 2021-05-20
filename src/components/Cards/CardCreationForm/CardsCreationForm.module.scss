@@ -31,15 +31,4 @@
   &__button {
     width: 100px;
   }
-
-  &__error {
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: yellow;
-    font-weight: bold;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
 }
