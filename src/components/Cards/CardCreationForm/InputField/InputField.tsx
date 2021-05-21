@@ -1,10 +1,17 @@
 import { useRef } from 'react';
-import PropTypes from 'prop-types';
 import styles from './InputField.module.scss';
+import {IField} from '../types';
 
-function InputField({field, inputChange}) {
-  const ref = useRef(null);
-  if (field.error) ref.current.focus();
+interface IProps {
+  field: IField;
+  inputChange(event: React.ChangeEvent<HTMLInputElement>): void
+}
+
+const InputField: React.FC<IProps> = ({field, inputChange}) => {
+  const ref = useRef<HTMLInputElement | null>(null);
+
+  if (field.error) ref.current!.focus();
+
   return (
     <div className={styles.field}>
       <label htmlFor={field.id} className={styles.field__label}>{field.name}</label>
@@ -13,20 +20,5 @@ function InputField({field, inputChange}) {
     </div>
   )
 }
-
-InputField.propTypes = {
-  field: PropTypes.shape({
-    id: PropTypes.string,
-    name: PropTypes.string,
-    description: PropTypes.string,
-    price: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.number
-    ]),
-    imageUrl: PropTypes.string,
-    error: PropTypes.bool.isRequired
-  }).isRequired,
-  inputChange: PropTypes.func.isRequired
-};
 
 export default InputField;

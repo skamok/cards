@@ -21,7 +21,7 @@ function CardsContainer() {
   
   return (
     <section className={styles.cardsCntr}>
-      {/* <CardsCreationForm /> */}
+      <CardsCreationForm />
       <div className={styles.cardsCntr__cards}>
         {
           cards.length

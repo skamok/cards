@@ -2,9 +2,9 @@ import styles from './Card.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { useCallback } from 'react';
-import { deleteCard } from '../../redux/actions/cards_old.js';
-import { ICard } from '../../redux/actions/types';
-import { useAppDispatch } from '../../redux/hooks/hooks';
+import { deleteCard } from '../../../redux/actions/cards';
+import { ICard } from '../../../redux/actions/types';
+import { useAppDispatch } from '../../../redux/hooks/hooks';
 
 interface ICardProps {
   card: ICard;

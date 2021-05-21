@@ -1,12 +1,15 @@
-import React, { useState, useCallback, useRef} from 'react';
+import React, { useState, useCallback} from 'react';
 import styles from './CardsCreationForm.module.scss';
 import { v1 as uuidv1 } from 'uuid';
 import { addCard } from '../../../redux/actions/cards_old.js';
 import Description from './Description';
 import InputField from './InputField';
 import {IField} from './types';
+import { ICard } from '../../../redux/actions/types';
+import { useAppDispatch } from '../../../redux/hooks/hooks';
 
 interface IFields {
+  [index: string]: IField;
   title: IField;
   price: IField;
   imageUrl: IField;
@@ -49,7 +52,7 @@ const initialState: IFields = {
 }
 
 function CardsCreationForm() {
-
+  const dispatch = useAppDispatch();
   const [fields, setFields] = useState<IFields>(initialState);
 
   const checkInputComplete = useCallback(() => {
@@ -64,28 +67,24 @@ function CardsCreationForm() {
     return false;
   }, [fields]);
 
-  const btnAddClick = useCallback((event) => {
+  const btnAddClick = useCallback((event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const error = checkInputComplete();
+    const error: boolean = checkInputComplete();
     if (!error) {
-      const card = {
+      const card: ICard = {
         id: uuidv1(),
-        title: fields.title.value,
-        description: fields.description.value,
-        price: Number.parseFloat(fields.price.value),
-        imageUrl: fields.imageUrl.value
+        title: fields.title.value as string,
+        description: fields.description.value as string,
+        price: fields.price.value as number,
+        imageUrl: fields.imageUrl.value as string
       }
-      store.dispatch(addCard(card));
+      dispatch(addCard(card));
     }
-  }, [checkInputComplete, fields, store]);
+  }, [checkInputComplete, fields, dispatch]);
 
   const inputChange = useCallback((event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
-    // const {name, value: val} = event.currentTarget;
-    // const name: 'title' | 'price' | 'description' | 'imageUrl' = event.currentTarget.name;
-    const rty: string | 'name' = 'name';
-    const name: string = event.currentTarget[rty];
+    const {name, value: val} = event.currentTarget;
     setFields((prev) => {
-      const abc: IField = prev[name];
       const node: IField = {...prev[name], value: val, error: false};
       return {...prev, [name]: node}
     });
