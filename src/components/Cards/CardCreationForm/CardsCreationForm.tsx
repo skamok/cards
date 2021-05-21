@@ -1,7 +1,7 @@
 import React, { useState, useCallback} from 'react';
 import styles from './CardsCreationForm.module.scss';
 import { v1 as uuidv1 } from 'uuid';
-import { addCard } from '../../../redux/actions/cards_old.js';
+import { addCard } from '../../../redux/actions/cards';
 import Description from './Description';
 import InputField from './InputField';
 import {IField} from './types';
