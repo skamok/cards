@@ -1,0 +1,76 @@
+.card {
+  background-color: lightgray;
+  display: flex;
+  width: 100%;
+  margin-bottom: 5px;
+
+  &__imgCntr {
+    max-width: 168px;
+    padding: 5px 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__img {
+    width:100%;
+    display: block;
+  }
+
+  &__info {
+    padding: 5px 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__btnDelete {
+    // background-color: white;
+    // border: 2px solid red;
+    border-radius: 7px;
+    color: darkred;
+    font: {
+      size: 20px;
+      weight: bold;
+    }
+
+    &:hover {
+      font-size: 30px;
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font: {
+      size: 32px;
+      weight: bold;
+    }
+  }
+
+  &__description {
+    margin: 0;
+    font: {
+      size: 24px;
+      weight: normal;
+    }
+  }
+
+  &__price {
+    margin: 0;
+    text-align: end;
+    font: {
+      size: 36px;
+      weight: normal;
+    }
+  }
+}

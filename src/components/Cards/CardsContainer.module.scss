@@ -1,0 +1,15 @@
+.cardsCntr {
+  max-width: 768px;
+  padding-right: 10px;
+
+  &__cards {
+    overflow-y: scroll;
+    height: 80%;
+  }
+
+  &__message {
+    font-size: 36px;
+    text-align: center;
+    font-weight: bold;
+  }
+}

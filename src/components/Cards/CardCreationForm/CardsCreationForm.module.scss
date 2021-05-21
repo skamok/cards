@@ -1,0 +1,34 @@
+.form {
+  height: 15%;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-around;
+  background-color: lightgreen;
+  position: relative;
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-basis: 40%;
+  }
+
+  &__input {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__label {
+    font-weight: bold;
+  }
+  
+  &__right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  &__button {
+    width: 100px;
+  }
+}

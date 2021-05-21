@@ -1,0 +1,42 @@
+.form {
+  background-color: steelblue;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  width: 320px;
+  padding: 20px;
+  
+  &__input {
+    margin-bottom: 10px;
+    font-size: 24px;
+
+    &_error {
+      &::placeholder {
+        color: red;
+      }
+    }
+  }
+
+  &__button {
+    font-size: 24px;
+    align-self: center;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(0.9);
+    }
+  }
+
+  &__message {
+    text-align: center;
+    color: red;
+    font-size: 20px;
+    margin: 0;
+    padding-bottom: 10px;
+    display: none;
+
+    &_visible {
+      display: unset;
+    }
+  }
+}

@@ -1,0 +1,56 @@
+.header {
+  background-color: lightsalmon;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  
+  &__user {
+    
+  }
+
+  &__nav {
+
+  }
+}
+
+.user {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  
+  &__image {
+    display: block;
+    height: 64px;
+  }
+
+  &__name {
+    color: honeydew;
+    padding-left: 10px;
+    font: {
+      size: 24px;
+      weight: bold;
+    }
+  }
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+
+  &__item {
+    padding-right: 20px;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: seagreen;
+    font: {
+      size: 20px;
+      weight: bold;
+    }
+  }
+}
