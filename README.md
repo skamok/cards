@@ -1,2 +1,2 @@
 # Cards
-https://skamok.github.io/cards/
+Deploy https://skamok.github.io/cards/
